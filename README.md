@@ -1,6 +1,8 @@
 # start-react-project
 React - es2015 project BABEL + BROWSERIFY
 
+[![Build Status](https://travis-ci.org/suxxus/start-react-project.svg?branch=master)](https://travis-ci.org/suxxus/start-react-project)
+
 ## Features ###
 * npm scripts
 * Lint ESLINT
