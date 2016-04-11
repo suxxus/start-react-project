@@ -26,6 +26,8 @@ npm install
 * Unit test example with tape.
 * Example of react Storybook, with dummy component.
 
+*Feel free to use it as a starter template and to expand on it as needed*
+
 ## Scripts
 
 The `package.json` file comes with the following scripts
