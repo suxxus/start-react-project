@@ -57,7 +57,7 @@
     "literalify": "0.4.0",
     "mock": "0.1.1",
     "postcss-color-rebeccapurple": "2.0.0",
-    "postcss-loader": "0.8.2",
+    "postcss-loader": "0.9.1",
     "react-addons-test-utils": "15.0.1",
     "sinon": "1.17.3",
     "style-loader": "0.13.1",
