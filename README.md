@@ -43,6 +43,10 @@ The `package.json` file comes with the following scripts
 
 `test`: run provided unit tests.
 
+`coverage`: add coverage when running tests.
+
+`coverall`: run coverage tasks.
+
 `lint`: lint all babel code.
 
 `browsersync`: launch a dev server(http://localhost:3000) providing the app at ./build, start watching files at ./src. proxy to port:4000.
