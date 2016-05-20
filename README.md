@@ -7,10 +7,13 @@ React - es2015 project BABEL + BROWSERIFY
 
 ## Features ###
 * npm scripts
+* es2015
 * Lint ESLINT
 * Unit testing TAPE
 * BrowserSync
 * React Storybook
+* Express
+
 
 ## Clone the repo & install
 ```
@@ -21,9 +24,11 @@ npm install
 ## Usage
 * npm run update
 * delete .git
-* npm run dev or npm run start
+* git init
+* remove example files at ./src
+* npm run devc or npm run dev
 
-## Tip
+## Tips
 * Example of component.
 * Unit test example with tape.
 * Example of react Storybook, with dummy component.
@@ -40,19 +45,19 @@ The `package.json` file comes with the following scripts
 
 `lint`: lint all babel code.
 
-`watch`: start watching files, perform test, lint tasks.
-
-`browsersync`: launch a dev server(http://localhost:3000) providing the app at ./build, start watching files at ./build.
+`browsersync`: launch a dev server(http://localhost:3000) providing the app at ./build, start watching files at ./src. proxy to port:4000.
 
 `build`: generates the compiled app at ./build directory.
 
-`dev`:  runs a dev console that reports lint and unit tests and start watching for changes at *.js files.
+`dev`:  runs a dev console that reports lint and unit tests and start watching for changes at *.js files, perform build tasks.
 
-`start`: runs build, watch, and browsersync tasks.
+`start`: runs server at port:8080 provide files place at ./public.
 
 `storybook`:  launch a server at port 9001.
 
 `dist`: generates a distribution version, placed at ./dist
+
+`prepublish`: perform prepublish:create and dist task, copy files from ./dist to ./server/public.
 
 `check`: check outdated npm modules.
 
