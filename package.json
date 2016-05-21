@@ -1,7 +1,7 @@
 {
   "name": "start-react-project",
   "version": "1.0.1",
-  "description": "seed project starter",
+  "description": "seed react project starter",
   "author": "SUXXUS",
   "license": "ISC",
   "repository": {
@@ -13,7 +13,7 @@
     "title": "title",
     "dependencies": [],
     "styledependencies": [
-      "main.css"
+      "bundle.css"
     ]
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "babel-cli": "6.9.0",
     "babel-eslint": "6.0.4",
     "babel-istanbul": "0.8.0",
+    "babel-plugin-transform-react-jsx": "6.8.0",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.5.0",
     "babelify": "7.3.0",
@@ -67,7 +68,7 @@
     "npm": ">=3.8.0"
   },
   "scripts": {
-    "lint": "eslint --fix --color ./src/scripts/*.js || true",
+    "lint": "eslint --fix --color ./src || true",
     "browsersync": "node browser-sync",
     "build:scripts": "NODE_PATH=src browserify -d -t babelify -t literalify src/scripts/index.js > build/bundle.js",
     "build:markup": "jade src/index.jade --obj package.json --pretty --out build",
@@ -77,12 +78,13 @@
     "check": "npm outdated --depth=0",
     "coverall": "npm run coverage",
     "coverage": "NODE_PATH=src babel-node `npm bin`/babel-istanbul cover src/tests",
-    "dev": "watch -p 'src/**/*' -c 'npm run test & npm run lint && npm run build'",
+    "dev": "watch -p 'src/**/*' -c 'npm run build && npm run test'",
     "devc": "watch -p 'src/**/*' -c 'npm run test -s & npm run lint -s'",
     "dist": "npm run build && cat build/*.css | cleancss -o dist/bundle.css && npm run minify:html && npm run uglify",
     "freddie": "freddie",
     "minify:html": "html-minifier --collapse-whitespace build/index.html -o  dist/index.html",
     "prebuild": "npm run clean & npm run lint",
+    "prestest": "npm run lint",
     "prepublish:remove": "rm -rf ./server/public && rm -rf ./build && rm -rf ./dist",
     "prepublish:create": "mkdir ./server/public && mkdir build && mkdir dist",
     "prepublish": "npm run prepublish:remove && npm run prepublish:create && npm run dist && cp -rf ./dist/* ./server/public",
