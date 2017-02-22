@@ -1,9 +1,0 @@
-{
-    "use": ["autoprefixer"],
-    "input": "./src/styles/*.css",
-    "output": "./build/bundle.css",
-    "local-plugins": true,
-    "autoprefixer": {
-        "browsers": "> 5%"
-    }
-}
