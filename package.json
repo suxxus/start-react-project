@@ -1,7 +1,7 @@
 {
-    "name": "advanced-redux-course",
-    "version": "0.0.0",
-    "description": "studie redux",
+    "name": "start-react-project",
+    "version": "0.0.2",
+    "description":"react project stater",
     "main": "index.js",
     "author": "suxxus",
     "license": "MIT",
