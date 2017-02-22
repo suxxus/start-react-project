@@ -4,7 +4,7 @@ node_js:
 script:
   - npm run lint
   - npm run check
-
+  - npm run coverage
 # whitelist
 branches:
   only:

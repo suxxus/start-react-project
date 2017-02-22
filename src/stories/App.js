@@ -1,17 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import Hello from '../scripts/hello.js';
-
-const hello = Hello(React);
+import App from '../scripts/components/App';
 
 const $ = React.createElement;
 
-storiesOf('App', module)
-    .add('Hello', () => {
+storiesOf('app', module)
+    .add('App', () => {
+      const props = {
+        text: 'my day',
+      };
 
-        const props = {
-            str: 'Hello World!!'
-        };
-
-        return $(hello, props);
+      return $(App(React), props);
     });

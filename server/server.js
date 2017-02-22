@@ -1,31 +1,29 @@
-var express = require('express'),
-    compression = require('compression'),
-    bodyparser = require('body-parser'),
-    path = require('path'),
-    data = path.join(__dirname, 'data'),
-    port = process.env.PORT || 8080,
-    moment = require('moment'),
-    cors = require('cors'),
-    jsonfileservice = require('./utils/jsonfilesrv'),
-    api = require('./end-points-serv/api'),
-    CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
+/* eslint no-console: ["off"] */
+/* eslint one-var: ["off"] */
 
-// Configure CORS for localhost access
-var app = express();
+const api = require('./end-points-serv/api'),
+  bodyparser = require('body-parser'),
+  compression = require('compression'),
+  cors = require('cors'),
+  express = require('express'),
+  path = require('path');
+
+const data = path.join(__dirname, 'data');
+const port = process.env.PORT || 8080;
+const app = express();
+
 app.use(cors());
 app.use(compression());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 api(app, {
-    data: data,
-    file: 'data.json',
-    getJson: jsonfileservice.getJsonFromFile
+  data,
+  file: 'data.json',
 });
 
-var server = app.listen(port, function() {
-    var host = server.address().address;
-    var port = server.address().port;
-    console.log('Example app listening at http://%s:%s', host, port);
+const server = app.listen(port, () => {
+  const host = server.address().address;
+  console.log('Example app listening at http://%s:%s', host, port);
 });

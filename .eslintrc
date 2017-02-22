@@ -1,42 +1,33 @@
-{
-  "extends": "eslint",
-  "parser": "babel-eslint",
-  "jsx-target": "react-eslint",
-  "env": {
-    "node": true,
-    "browser": true,
-    "es6": true
-  },
-  "globals": {
-    "React": false
-  },
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-    "no-unused-vars": [
-      2,
-      {
-        "args": "none",
-        "argsIgnorePattern": "React"
-      }
+ {
+    "settings":{
+      "import/resolver":{
+         "node":{
+            "paths":[
+               "src"
+            ],
+            "extensions":[
+               ".js",
+               ".json"
+            ]
+         }
+      },
+      "import/ignore":[
+         "node_modules",
+         "\\.(coffee|scss|css|less|hbs|svg|json)$"
+      ]
+   },
+
+    "extends": [
+      "eslint-config-airbnb",
+      "plugin:import/errors",
+      "plugin:import/warnings"
     ],
-    "no-mixed-spaces-and-tabs": [
-      0,
-      "smart-tabs"
-    ],
-    "react/jsx-uses-vars": 2,
-    "func-style": [
-      0,
-      "declaration"
-    ],
-    "new-cap": [
-      0
-    ],
-    "quotes": [
-      2,
-      "single",
-      "avoid-escape"
-    ]
-  }
+    "rules": {
+        "quotes": ["error", "single"]
+    },
+
+    "env": {
+        "node": true
+    }
 }
+

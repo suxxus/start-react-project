@@ -1,0 +1,15 @@
+{
+    "tpls": {
+        "title": "test",
+        "dependencies": [
+            "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react",
+            "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom"
+        ],
+        "styledependencies": ["bundle.css"]
+    },
+
+    "literalify": {
+        "react": "window.React",
+        "react-dom": "window.ReactDOM"
+    }
+}
